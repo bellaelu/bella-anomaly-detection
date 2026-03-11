@@ -1,0 +1,277 @@
+Mar 10 19:22:02 ip-172-31-2-95 systemd[1]: Started anomaly.service - Anomaly Detection FastAPI.
+Mar 10 19:22:03 ip-172-31-2-95 fastapi[4178]:    FastAPI   Starting production server 🚀
+Mar 10 19:22:03 ip-172-31-2-95 fastapi[4178]:  
+Mar 10 19:22:03 ip-172-31-2-95 fastapi[4178]:              Searching for package file structure from directories with
+Mar 10 19:22:03 ip-172-31-2-95 fastapi[4178]:              __init__.py files
+Mar 10 19:22:09 ip-172-31-2-95 fastapi[4178]:              Importing from /opt/anomaly-detection
+Mar 10 19:22:09 ip-172-31-2-95 fastapi[4178]:  
+Mar 10 19:22:09 ip-172-31-2-95 fastapi[4178]:     module   🐍 app.py
+Mar 10 19:22:09 ip-172-31-2-95 fastapi[4178]:  
+Mar 10 19:22:09 ip-172-31-2-95 fastapi[4178]:       code   Importing the FastAPI app object from the module with the following
+Mar 10 19:22:09 ip-172-31-2-95 fastapi[4178]:              code:
+Mar 10 19:22:09 ip-172-31-2-95 fastapi[4178]:  
+Mar 10 19:22:09 ip-172-31-2-95 fastapi[4178]:              from app import app
+Mar 10 19:22:09 ip-172-31-2-95 fastapi[4178]:  
+Mar 10 19:22:09 ip-172-31-2-95 fastapi[4178]:        app   Using import string: app:app
+Mar 10 19:22:09 ip-172-31-2-95 fastapi[4178]:  
+Mar 10 19:22:09 ip-172-31-2-95 fastapi[4178]:     server   Server started at http://0.0.0.0:8000
+Mar 10 19:22:09 ip-172-31-2-95 fastapi[4178]:     server   Documentation at http://0.0.0.0:8000/docs
+Mar 10 19:22:09 ip-172-31-2-95 fastapi[4178]:  
+Mar 10 19:22:09 ip-172-31-2-95 fastapi[4178]:              Logs:
+Mar 10 19:22:09 ip-172-31-2-95 fastapi[4178]:  
+Mar 10 19:22:09 ip-172-31-2-95 fastapi[4178]:       INFO   Started server process [4178]
+Mar 10 19:22:09 ip-172-31-2-95 fastapi[4178]:       INFO   Waiting for application startup.
+Mar 10 19:22:09 ip-172-31-2-95 fastapi[4178]:       INFO   Application startup complete.
+Mar 10 19:22:09 ip-172-31-2-95 fastapi[4178]:       INFO   Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+Mar 10 19:23:34 ip-172-31-2-95 fastapi[4178]:       INFO   127.0.0.1:41688 - "GET /health HTTP/1.1" 200
+Mar 10 19:24:58 ip-172-31-2-95 fastapi[4178]:       INFO   127.0.0.1:59116 - "GET /health HTTP/1.1" 200
+Mar 10 19:25:03 ip-172-31-2-95 fastapi[4178]:       INFO   127.0.0.1:40764 - "GET /baseline/current HTTP/1.1" 200
+Mar 10 19:26:39 ip-172-31-2-95 fastapi[4178]:       INFO   127.0.0.1:37608 - "GET /health HTTP/1.1" 200
+Mar 10 19:39:16 ip-172-31-2-95 fastapi[4178]:       INFO   50.73.238.18:64522 - "GET /health HTTP/1.1" 200
+Mar 10 19:39:24 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.145:31692 - "POST /notify HTTP/1.1" 200
+Mar 10 19:43:05 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.49:13873 - "POST /notify HTTP/1.1" 200
+Mar 10 19:44:05 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T194303.csv
+Mar 10 19:44:05 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 19:44:05 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 19:44:05 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.18:31144 - "POST /notify HTTP/1.1" 200
+Mar 10 19:45:05 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T194404.csv
+Mar 10 19:45:05 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 19:45:05 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 19:45:05 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.102:41011 - "POST /notify HTTP/1.1" 200
+Mar 10 19:46:05 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T194504.csv
+Mar 10 19:46:05 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 19:46:05 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 19:46:05 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.150:35331 - "POST /notify HTTP/1.1" 200
+Mar 10 19:47:06 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T194604.csv
+Mar 10 19:47:06 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 19:47:06 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 19:47:06 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.46:61437 - "POST /notify HTTP/1.1" 200
+Mar 10 19:48:06 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T194705.csv
+Mar 10 19:48:06 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 19:48:06 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 19:48:06 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.84:25802 - "POST /notify HTTP/1.1" 200
+Mar 10 19:49:06 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T194805.csv
+Mar 10 19:49:06 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 19:49:06 ip-172-31-2-95 fastapi[4178]:   Done: 7/100 anomalies flagged
+Mar 10 19:49:06 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.24:21437 - "POST /notify HTTP/1.1" 200
+Mar 10 19:49:44 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T194905.csv
+Mar 10 19:49:44 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 19:49:44 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 19:49:44 ip-172-31-2-95 fastapi[4178]:       INFO   45.156.128.45:40574 - "GET / HTTP/1.1" 404
+Mar 10 19:50:08 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.5.255:22014 - "POST /notify HTTP/1.1" 200
+Mar 10 19:51:08 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T195006.csv
+Mar 10 19:51:08 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 19:51:08 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 19:51:08 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.163.3:62199 - "POST /notify HTTP/1.1" 200
+Mar 10 19:52:09 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T195107.csv
+Mar 10 19:52:09 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 19:52:09 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 19:52:09 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.33:45180 - "POST /notify HTTP/1.1" 200
+Mar 10 19:53:09 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T195207.csv
+Mar 10 19:53:09 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 19:53:09 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 19:53:09 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.169:18881 - "POST /notify HTTP/1.1" 200
+Mar 10 19:54:10 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T195308.csv
+Mar 10 19:54:10 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 19:54:10 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 19:54:10 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.106:8027 - "POST /notify HTTP/1.1" 200
+Mar 10 19:55:10 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T195408.csv
+Mar 10 19:55:10 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 19:55:10 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 19:55:10 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.163.1:50344 - "POST /notify HTTP/1.1" 200
+Mar 10 19:56:11 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T195509.csv
+Mar 10 19:56:11 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 19:56:11 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 19:56:11 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.64:36047 - "POST /notify HTTP/1.1" 200
+Mar 10 19:57:14 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T195610.csv
+Mar 10 19:57:14 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 19:57:14 ip-172-31-2-95 fastapi[4178]:   Done: 7/100 anomalies flagged
+Mar 10 19:57:14 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.28:63882 - "POST /notify HTTP/1.1" 200
+Mar 10 19:58:16 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T195711.csv
+Mar 10 19:58:16 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 19:58:16 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 19:58:16 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.160.3:7292 - "POST /notify HTTP/1.1" 200
+Mar 10 19:59:18 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T195814.csv
+Mar 10 19:59:18 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 19:59:18 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 19:59:18 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.73:1739 - "POST /notify HTTP/1.1" 200
+Mar 10 20:00:18 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T195915.csv
+Mar 10 20:00:18 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:00:18 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 20:00:18 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.124:17095 - "POST /notify HTTP/1.1" 200
+Mar 10 20:01:18 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T200017.csv
+Mar 10 20:01:18 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:01:18 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 20:01:18 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.29:26499 - "POST /notify HTTP/1.1" 200
+Mar 10 20:02:19 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T200117.csv
+Mar 10 20:02:19 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:02:19 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 20:02:19 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.160.43:11709 - "POST /notify HTTP/1.1" 200
+Mar 10 20:03:19 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T200217.csv
+Mar 10 20:03:19 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:03:19 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 20:03:19 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.36:24270 - "POST /notify HTTP/1.1" 200
+Mar 10 20:04:20 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T200318.csv
+Mar 10 20:04:20 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:04:20 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 20:04:20 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.140:39447 - "POST /notify HTTP/1.1" 200
+Mar 10 20:05:20 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T200418.csv
+Mar 10 20:05:20 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:05:20 ip-172-31-2-95 fastapi[4178]:   Done: 7/100 anomalies flagged
+Mar 10 20:05:20 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.101:39297 - "POST /notify HTTP/1.1" 200
+Mar 10 20:06:20 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T200519.csv
+Mar 10 20:06:20 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:06:20 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 20:06:20 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.167:44741 - "POST /notify HTTP/1.1" 200
+Mar 10 20:07:20 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T200619.csv
+Mar 10 20:07:20 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:07:20 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 20:07:20 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.110:20491 - "POST /notify HTTP/1.1" 200
+Mar 10 20:08:23 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T200719.csv
+Mar 10 20:08:23 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:08:23 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 20:08:23 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.89:63726 - "POST /notify HTTP/1.1" 200
+Mar 10 20:09:23 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T200820.csv
+Mar 10 20:09:23 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:09:23 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 20:09:23 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.84:26438 - "POST /notify HTTP/1.1" 200
+Mar 10 20:10:24 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T200922.csv
+Mar 10 20:10:24 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:10:24 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 20:10:24 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.105:12130 - "POST /notify HTTP/1.1" 200
+Mar 10 20:11:24 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T201023.csv
+Mar 10 20:11:24 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:11:24 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 20:11:24 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.60:16220 - "POST /notify HTTP/1.1" 200
+Mar 10 20:12:26 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T201123.csv
+Mar 10 20:12:26 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:12:26 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 20:12:26 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.82:15781 - "POST /notify HTTP/1.1" 200
+Mar 10 20:13:26 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T201224.csv
+Mar 10 20:13:26 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:13:26 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 20:13:26 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.46:37832 - "POST /notify HTTP/1.1" 200
+Mar 10 20:14:26 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T201325.csv
+Mar 10 20:14:26 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:14:26 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 20:14:26 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.53:56127 - "POST /notify HTTP/1.1" 200
+Mar 10 20:15:27 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T201425.csv
+Mar 10 20:15:27 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:15:27 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 20:15:27 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.41:14929 - "POST /notify HTTP/1.1" 200
+Mar 10 20:16:28 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T201526.csv
+Mar 10 20:16:28 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:16:28 ip-172-31-2-95 fastapi[4178]:   Done: 7/100 anomalies flagged
+Mar 10 20:16:28 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.160.3:32283 - "POST /notify HTTP/1.1" 200
+Mar 10 20:17:29 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T201627.csv
+Mar 10 20:17:29 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:17:29 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 20:17:29 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.104:44489 - "POST /notify HTTP/1.1" 200
+Mar 10 20:18:31 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T201727.csv
+Mar 10 20:18:31 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:18:31 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 20:18:31 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.123:19131 - "POST /notify HTTP/1.1" 200
+Mar 10 20:19:32 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T201828.csv
+Mar 10 20:19:32 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:19:32 ip-172-31-2-95 fastapi[4178]:   Done: 7/100 anomalies flagged
+Mar 10 20:19:32 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.169:46447 - "POST /notify HTTP/1.1" 200
+Mar 10 20:20:33 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T201930.csv
+Mar 10 20:20:33 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:20:33 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 20:20:33 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.24:31648 - "POST /notify HTTP/1.1" 200
+Mar 10 20:21:33 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T202031.csv
+Mar 10 20:21:33 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:21:33 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 20:21:33 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.24:1250 - "POST /notify HTTP/1.1" 200
+Mar 10 20:22:33 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T202132.csv
+Mar 10 20:22:33 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:22:33 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 20:22:33 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.81:50679 - "POST /notify HTTP/1.1" 200
+Mar 10 20:23:34 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T202232.csv
+Mar 10 20:23:34 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:23:34 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 20:23:34 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.103:21764 - "POST /notify HTTP/1.1" 200
+Mar 10 20:24:34 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T202333.csv
+Mar 10 20:24:34 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:24:34 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 20:24:34 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.160.14:48918 - "POST /notify HTTP/1.1" 200
+Mar 10 20:25:36 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T202433.csv
+Mar 10 20:25:36 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:25:36 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 20:25:36 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.136:55577 - "POST /notify HTTP/1.1" 200
+Mar 10 20:26:36 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T202534.csv
+Mar 10 20:26:36 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:26:36 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 20:26:36 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.126:62217 - "POST /notify HTTP/1.1" 200
+Mar 10 20:27:36 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T202635.csv
+Mar 10 20:27:36 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:27:36 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 20:27:36 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.160.1:37147 - "POST /notify HTTP/1.1" 200
+Mar 10 20:28:37 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T202735.csv
+Mar 10 20:28:37 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:28:37 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 20:28:37 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.163.1:53916 - "POST /notify HTTP/1.1" 200
+Mar 10 20:29:41 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T202836.csv
+Mar 10 20:29:41 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:29:41 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 20:29:41 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.22:26045 - "POST /notify HTTP/1.1" 200
+Mar 10 20:30:42 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T202937.csv
+Mar 10 20:30:42 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:30:42 ip-172-31-2-95 fastapi[4178]:   Done: 7/100 anomalies flagged
+Mar 10 20:30:42 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.39:62173 - "POST /notify HTTP/1.1" 200
+Mar 10 20:31:42 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T203040.csv
+Mar 10 20:31:42 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:31:42 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 20:31:42 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.100:36690 - "POST /notify HTTP/1.1" 200
+Mar 10 20:32:46 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T203141.csv
+Mar 10 20:32:46 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:32:46 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 20:32:46 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.39:60969 - "POST /notify HTTP/1.1" 200
+Mar 10 20:33:46 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T203241.csv
+Mar 10 20:33:46 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:33:46 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 20:33:46 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.82:61305 - "POST /notify HTTP/1.1" 200
+Mar 10 20:34:47 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T203345.csv
+Mar 10 20:34:47 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:34:47 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 20:34:47 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.82:16158 - "POST /notify HTTP/1.1" 200
+Mar 10 20:35:47 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T203446.csv
+Mar 10 20:35:47 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:35:47 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 20:35:47 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.21:41206 - "POST /notify HTTP/1.1" 200
+Mar 10 20:36:48 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T203546.csv
+Mar 10 20:36:48 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:36:48 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 20:36:48 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.123:7603 - "POST /notify HTTP/1.1" 200
+Mar 10 20:37:49 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T203647.csv
+Mar 10 20:37:49 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:37:49 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 20:37:49 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.81:36786 - "POST /notify HTTP/1.1" 200
+Mar 10 20:38:50 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T203748.csv
+Mar 10 20:38:50 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:38:50 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 20:38:50 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.47:6316 - "POST /notify HTTP/1.1" 200
+Mar 10 20:39:50 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T203848.csv
+Mar 10 20:39:50 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:39:50 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 20:39:50 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.17:4110 - "POST /notify HTTP/1.1" 200
+Mar 10 20:40:50 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T203949.csv
+Mar 10 20:40:50 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:40:50 ip-172-31-2-95 fastapi[4178]:   Done: 6/100 anomalies flagged
+Mar 10 20:40:50 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.5.251:35644 - "POST /notify HTTP/1.1" 200
+Mar 10 20:41:53 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T204049.csv
+Mar 10 20:41:53 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:41:53 ip-172-31-2-95 fastapi[4178]:   Done: 7/100 anomalies flagged
+Mar 10 20:41:53 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.160.23:27262 - "POST /notify HTTP/1.1" 200
+Mar 10 20:42:55 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T204150.csv
+Mar 10 20:42:55 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:42:55 ip-172-31-2-95 fastapi[4178]:   Done: 7/100 anomalies flagged
+Mar 10 20:42:55 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.160.24:62007 - "POST /notify HTTP/1.1" 200
+Mar 10 20:43:55 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T204253.csv
+Mar 10 20:43:55 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:43:55 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 20:43:55 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.126:60694 - "POST /notify HTTP/1.1" 200
+Mar 10 20:44:55 ip-172-31-2-95 fastapi[4178]: Processing: s3://newlabstack-databucket-hzaok7f2dpja/raw/sensors_20260310T204354.csv
+Mar 10 20:44:55 ip-172-31-2-95 fastapi[4178]:   Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+Mar 10 20:44:55 ip-172-31-2-95 fastapi[4178]:   Done: 5/100 anomalies flagged
+Mar 10 20:44:55 ip-172-31-2-95 fastapi[4178]:       INFO   15.221.161.91:3678 - "POST /notify HTTP/1.1" 200

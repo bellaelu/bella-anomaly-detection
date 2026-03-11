@@ -1,0 +1,174 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: DS5220 Data Project 1 Anomaly Detection Pipeline
+
+Parameters:
+
+  MyIP:
+    Type: String
+    Description: Your public IP in CIDR notation
+    Default: 50.73.238.18/32
+
+  KeyName:
+    Type: AWS::EC2::KeyPair::KeyName
+    Default: ds5220awssshkey
+
+  RepoURL:
+    Type: String
+    Default: https://github.com/bellaelu/bella-anomaly-detection.git
+
+
+Resources:
+
+  # SNS Topic must be created first
+  SNSTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: ds5220-dp1
+
+  # Topic policy must exist before S3 can validate it as a notification destination
+  SNSTopicPolicy:
+    Type: AWS::SNS::TopicPolicy
+    Properties:
+      Topics:
+        - !Ref SNSTopic
+      PolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: s3.amazonaws.com
+            Action: sns:Publish
+            Resource: !Ref SNSTopic
+
+  # Bucket depends on the topic policy being in place first
+  DataBucket:
+    Type: AWS::S3::Bucket
+    DependsOn: SNSTopicPolicy
+    Properties:
+      NotificationConfiguration:
+        TopicConfigurations:
+          - Event: s3:ObjectCreated:Put
+            Topic: !Ref SNSTopic
+            Filter:
+              S3Key:
+                Rules:
+                  - Name: prefix
+                    Value: raw/
+                  - Name: suffix
+                    Value: .csv
+
+  EC2Role:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ec2.amazonaws.com
+            Action: sts:AssumeRole
+
+  EC2Policy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: S3Access
+      Roles:
+        - !Ref EC2Role
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Action: "s3:*"
+            Resource:
+              - !Sub arn:aws:s3:::${DataBucket}
+              - !Sub arn:aws:s3:::${DataBucket}/*
+
+  InstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Roles:
+        - !Ref EC2Role
+
+  InstanceSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow SSH and FastAPI
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: !Ref MyIP
+        - IpProtocol: tcp
+          FromPort: 8000
+          ToPort: 8000
+          CidrIp: 0.0.0.0/0
+
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      KeyName: !Ref KeyName
+      InstanceType: t3.micro
+      ImageId: ami-0e2c8caa4b6378d8c
+      IamInstanceProfile: !Ref InstanceProfile
+      BlockDeviceMappings:
+        - DeviceName: /dev/sda1
+          Ebs:
+            VolumeSize: 16
+            VolumeType: gp3
+      SecurityGroupIds:
+        - !Ref InstanceSecurityGroup
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          set -e
+          exec > /var/log/userdata.log 2>&1
+
+          apt-get update -y
+          apt-get install -y git python3 python3-pip python3-venv
+
+          cd /opt
+          git clone ${RepoURL} anomaly-detection
+          cd anomaly-detection
+
+          python3 -m venv /opt/anomaly-detection/venv
+          /opt/anomaly-detection/venv/bin/pip install -r requirements.txt
+
+          export BUCKET_NAME=${DataBucket}
+          echo "BUCKET_NAME=${DataBucket}" >> /etc/environment
+
+          cat > /etc/systemd/system/anomaly.service <<EOF
+          [Unit]
+          Description=Anomaly Detection FastAPI
+          After=network.target
+
+          [Service]
+          User=ubuntu
+          WorkingDirectory=/opt/anomaly-detection
+          EnvironmentFile=/etc/environment
+          ExecStart=/opt/anomaly-detection/venv/bin/fastapi run app.py --host 0.0.0.0 --port 8000
+          Restart=always
+
+          [Install]
+          WantedBy=multi-user.target
+          EOF
+
+          systemctl daemon-reload
+          systemctl enable anomaly
+          systemctl start anomaly
+
+  ElasticIP:
+    Type: AWS::EC2::EIP
+    Properties:
+      Domain: vpc
+
+  EIPAssociation:
+    Type: AWS::EC2::EIPAssociation
+    Properties:
+      InstanceId: !Ref EC2Instance
+      AllocationId: !GetAtt ElasticIP.AllocationId
+
+  SNSSubscription:
+    Type: AWS::SNS::Subscription
+    Properties:
+      Protocol: http
+      TopicArn: !Ref SNSTopic
+      Endpoint: !Sub http://${ElasticIP}:8000/notify
